@@ -11,27 +11,58 @@
  <div id='loaded'></div>
  <div id='percentage'></div>
  <script>
-   window.onload = function() {
-    var loaded_percentage = 0;
-    var spinner_div = document.getElementById("spinner");
-    var loaded_div = document.getElementById("loaded");
-    var percentage_div = document.getElementById("percentage");
+ window.onload = function() {
+  var loaded_percentage = 0;
+  var spinner_div = document.getElementById("spinner");
+  var loaded_div = document.getElementById("loaded");
+  var percentage_div = document.getElementById("percentage");
 
-    function clip_spinner() {
-      document.getElementById("percentage").innerHTML = loaded_percentage + "%";
-  
-      if (loaded_percentage <= 25) {
-        var x = (4 * loaded_percentage + 50) + "%";
-        var y = (4 * loaded_percentage - 50) + "%";
-        loaded_div.style.webkitClipPath = "polygon(50% -50%, 50% 50%, " + x + y + ")";
-      } else if (loaded_percentage <= 50) {
-        var x = (250 - 4 * loaded_percentage) + "%";
-        var y = (4 * loaded_percentage - 50) + "%";
-        loaded_div.style.webkitClipPath = "polygon(50% -50%, 50% 50%, " + x + y + ", 150% 50%";
-     } else if (loaded_percentage <= 75) {
-        var x = (250 - 4 * loaded_percentage) + "%";
-        var y = (350 - 4 * loaded_percentage) + "%";
-      }
+  function clip_spinner() {
+    document.getElementById("percentage").innerHTML = loaded_percentage + "%";
+
+    if (loaded_percentage <= 25) {
+      var x = (4 * loaded_percentage + 50) + "%";
+      var y = (4 * loaded_percentage - 50) + "%";
+      loaded_div.style.webkitClipPath = "polygon(50% -50%, 50% 50%, " + x + y + ")";
+    } else if (loaded_percentage <= 50) {
+      var x = (250 - 4 * loaded_percentage) + "%";
+      var y = (4 * loaded_percentage - 50) + "%";
+      loaded_div.style.webkitClipPath = "polygon(50% -50%, 50% 50%, " + x + y + ", 150% 50%";
+    } else if (loaded_percentage <= 75) {
+      var x = (250 - 4 * loaded_percentage) + "%";
+      var y = (350 - 4 * loaded_percentage) + "%";
+      loaded_div.style.webkitClipPath = "polygon(50% -50%, 50% 50%, " + x + y + ", 50% 150%, 150% 50%";
+    } else if (loaded_percentage <= 100) {
+
+      var x = (4 * loaded_percentage - 350) + "%";
+      var y = (350 - 4 * loaded_percentage) + "%";
+      loaded_div.style.webkitClipPath = "polygon(50% -50%, 50% 50%, " + x + y + ", -50% 50%, 50% 150%, 150% 50%";
+    } else {
+      loaded_div.style.webkitClipPath = "polygon(50% 50%)";
+    }
+
+  };
+
+  function exit_spinner() {
+    spinner_div.style.webkitAnimation = "spinner-exit 0.6s ease-in-out";
+    spinner_div.style.webkitAnimationFillMode = "forwards";
+    loaded_div.style.webkitAnimation = "loaded-exit 0.6s ease-in-out";
+    loaded_div.style.webkitAnimationFillMode = "forwards";
+    percentage_div.style.opacity = "0";
+  }
+
+  setInterval(function() {
+    loaded_percentage = loaded_percentage + Math.round(Math.random() * 4);
+    if (loaded_percentage > 100) {
+      loaded_percentage = 100;
+
+      clip_spinner();
+      exit_spinner();
+    } else {
+      clip_spinner();
+    }
+  }, 400);
+}
  </script>
 </body>
 </html>
