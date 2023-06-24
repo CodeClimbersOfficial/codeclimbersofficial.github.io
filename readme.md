@@ -7,6 +7,8 @@
 | ---- | ---- | ---- | ---- | ---- |
 | 1    | Clock | [/clock/index.html](https://codeclimbersofficial.github.io/clock/) | [/clock/](https://github.com/CodeClimbersOfficial/codeclimbersofficial.github.io/tree/main/clock) | [clock.zip](https://t.me/code_climbers/19) |
 | 2  | Toggle | [/toggle/index.html](https://codeclimbersofficial.github.io/toggle/) | [/toggle/](https://github.com/CodeClimbersOfficial/codeclimbersofficial.github.io/tree/main/toggle) | [toggle.zip](https://t.me/code_climbers/19)
+| 3  | Loading Spinner | [/loading-spinner/index.html](https://codeclimbersofficial.github.io/loading-spinner/) | [/loading-spinner/](https://github.com/CodeClimbersOfficial/codeclimbersofficial.github.io/tree/main/loading-spinner) | [Loading Spinner.zip](https://t.me/code_climbers/19)
+
 
 ### Contact Us
 
