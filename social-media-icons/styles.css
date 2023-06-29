@@ -33,23 +33,23 @@ body{
 }
 
 .icon-instagram:hover{
-	background-color: red;
-	outline-color: red;
+	background-color: #FFC0CB;
+	outline-color: #FFC0CB;
 }
 
 .icon-twitter:hover{
-	background-color: blue;
-	outline-color: blue;
+	background-color: #1DA1F2;
+	outline-color: #1DA1F2;
 }
 
-.icon-github:hover{
-	background-color: skyblue;
-	outline-color: skyblue;
+.icon-facebook:hover{
+	background-color: #3b5998;
+	outline-color: #3b5998;
 }
 
-.icon-codepen:hover{
-	background-color: violet;
-	outline-color: violet;
+.icon-whatsapp:hover{
+	background-color: #25D366;
+	outline-color: #25D366;
 }
 
 .icon:hover i{
