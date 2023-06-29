@@ -52,11 +52,6 @@ body{
 	outline-color: #25D366;
 }
 
-.icon-telegram:hover{
-	background-color: #0088cc;
-	outline-color: #0088cc;
-}
-
 .icon:hover i{
 	animation: shake 0.25s;
 }
